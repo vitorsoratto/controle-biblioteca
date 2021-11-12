@@ -42,6 +42,9 @@ const Header = () => {
                         <li>
                            <Link to="/controle/tipo-usuario" className="dropdown-item">Tipo Usuario</Link>
                         </li>
+                        <li>
+                           <Link to="/controle/usuario" className="dropdown-item">Usuario</Link>
+                        </li>
                      </ul>
                   </li>
                </ul>

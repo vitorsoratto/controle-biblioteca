@@ -15,6 +15,13 @@ export default class BasicService {
          .catch((err) => console.log(err));
    }
 
+   put(url, dados) {
+      return api
+      .put(url, dados)
+      .then((res) => res.status)
+      .catch((err) => console.log(err));
+   }
+
    delete(url) {
       return api
          .delete(url)

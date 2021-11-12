@@ -9,7 +9,7 @@ import { Button } from "primereact/button";
 import { confirmPopup } from "primereact/confirmpopup";
 import { Toast } from "primereact/toast";
 
-const TipoUsuario = () => {
+const Usuario = () => {
    const toast = useRef(null);
 
    let dadosVazio = {
@@ -47,7 +47,7 @@ const TipoUsuario = () => {
 
    const consultarDadosTabela = () => {
       servico
-         .get("tipos-usuario")
+         .get("usuarios")
          .then((dados) => setDadosTabela(dados))
          .catch((err) => console.log(err));
    };
@@ -61,7 +61,7 @@ const TipoUsuario = () => {
          console.log(typeof dadosSalvar.id);
          if (typeof dadosSalvar.id === "number") {
             servico
-               .put(`tipos-usuario/${dadosSalvar.id}`, dadosSalvar)
+               .put(`usuarios/${dadosSalvar.id}`, dadosSalvar)
                .then(() => {
                   consultarDadosTabela();
                })
@@ -78,7 +78,7 @@ const TipoUsuario = () => {
             limparSalvar();
          } else {
             servico
-               .post("tipos-usuario", dadosSalvar)
+               .post("usuarios", dadosSalvar)
                .then((status) => {
                   if (status <= 201) {
                      setDescricaoTipo("");
@@ -103,7 +103,7 @@ const TipoUsuario = () => {
 
    const acaoDeletar = (id) => {
       servico
-         .delete(`tipos-usuario/${id}`)
+         .delete(`usuarios/${id}`)
          .then(() => {
             consultarDadosTabela();
          })
@@ -168,7 +168,7 @@ const TipoUsuario = () => {
                style={{ width: "99%" }}
             >
                <div className="p-col-12 p-md-12 p-lg-12">
-                  <h3>Cadastro de Tipo de Usuário</h3>
+                  <h3>Cadastro de Usuário</h3>
                </div>
                <div className="p-col-12 p-md-12 p-lg-10">
                   <label htmlFor="descricao" className="p-sr-only">
@@ -209,6 +209,7 @@ const TipoUsuario = () => {
                   showGridlines
                >
                   <Column field="descricao" header="Nome" />
+                  <Column field="email" header="E-mail" />
                   <Column
                      body={templateBotoesTabela}
                      headerStyle={{ width: "10%", minWidth: "8rem" }}
@@ -223,4 +224,4 @@ const TipoUsuario = () => {
    );
 };
 
-export default TipoUsuario;
+export default Usuario;
