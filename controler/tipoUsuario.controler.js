@@ -1,7 +1,9 @@
 // @ts-ignore
 const db = require("../modelo/db");
-const TipoUsuario = db.tipoUsuario;
-const Op = db.sequelize.Op;
+
+import TipoUsuario from "../modelo/tipoUsuario.modelo";
+
+const Op = db.Op;
 
 const NOME_OBJETO = "Tipo Usuario";
 

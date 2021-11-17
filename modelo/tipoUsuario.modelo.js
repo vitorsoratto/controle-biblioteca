@@ -1,12 +1,14 @@
 const Sequelize = require("sequelize");
+const sequelize = require('./db');
 
-module.exports = (sequelize) => {
-  const TipoUsuario = sequelize.define("tipo_usuario", {
+const TipoUsuario = () => {
+
+  return sequelize.define("tipo_usuario", {
     descricao: {
       type: Sequelize.STRING,
       allowNull: false
     },
   });
+}
 
-  return TipoUsuario;
-};
+module.exports = TipoUsuario;

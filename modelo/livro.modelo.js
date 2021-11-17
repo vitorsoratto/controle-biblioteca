@@ -1,20 +1,21 @@
-const { DataTypes } = require("sequelize");
+const Sequelize = require("sequelize");
+const sequelize = require("./db");
 
-module.exports = (sequelize) => {
-  const Livro = sequelize.define("livro", {
-    titulo: {
-      type: DataTypes.STRING,
-    },
-    autor: {
-      type: DataTypes.STRING,
-    },
-    editora: {
-      type: DataTypes.STRING,
-    },
-    anoLancamento: {
-      type: DataTypes.INTEGER,
-    },
-  });
-
-  return Livro;
+const Livro = () => {
+   return sequelize.define("livro", {
+      titulo: {
+         type: Sequelize.STRING,
+      },
+      autor: {
+         type: Sequelize.STRING,
+      },
+      editora: {
+         type: Sequelize.STRING,
+      },
+      anoLancamento: {
+         type: Sequelize.INTEGER,
+      },
+   });
 };
+
+module.exports = Livro;

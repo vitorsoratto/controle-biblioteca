@@ -1,6 +1,11 @@
 const db = require("../modelo/db");
-const Usuario = db.usuario;
-const Op = db.sequelize.Op;
+const Op = db.Op;
+
+import Usuario from "../modelo/usuario.modelo";
+
+// const Usuario = require("../modelo/usuario.modelo");
+
+import TipoUsuario from "../modelo/tipoUsuario.modelo";
 
 const NOME_OBJETO = "Usuario";
 
@@ -30,6 +35,10 @@ exports.create = (req, res) => {
          });
       });
 };
+
+exports.completeObject = (tipoUsuarioId) => {
+   TipoUsuario
+}
 
 exports.findAll = (req, res) => {
    const descricao = req.query.descricao;

@@ -1,6 +1,8 @@
 const db = require("../modelo/db");
-const Livro = db.livro;
-const Op = db.sequelize.Op;
+
+import Livro from "../modelo/livro.modelo";
+
+const Op = db.Op;
 
 const NOME_OBJETO = "Livro";
 
